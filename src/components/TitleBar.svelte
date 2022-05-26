@@ -2,6 +2,7 @@
   import empirestatebuilding from "/src/assets/empire-state-building.png"
   export let title = "";
   export let subTitle = "";
+  import { user } from "../stores.js";
 </script>
 
 <div class="box has-text-centered columns m-2">
@@ -14,6 +15,10 @@
   </div>
   <div class="column">
     <i class="fas fa-map fa-3x" style="color:rgb(133, 196, 221)"></i>
-        <div class="is-size-7">Placemark-Hapi 0.1</div>
+    {#if $user.email}
+      <div class="is-size-7">{$user.email} </div>
+    {:else}
+      <div class="is-size-7">Placemark-Svelte 0.2</div>
+    {/if}
   </div>
 </div>

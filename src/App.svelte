@@ -5,6 +5,11 @@
   import Discover from "./pages/Discover.svelte";
   import Report from "./pages/Report.svelte";
   import Router from "svelte-spa-router";
+  import { PlacemarkService } from "./services/placemark-service.js"
+  import { setContext } from "svelte";
+
+
+  setContext("PlacemarkService", new PlacemarkService("http://localhost:4000"));
 
   let routes = {
     "/": Main,

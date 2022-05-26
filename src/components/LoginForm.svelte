@@ -1,11 +1,22 @@
 <script>
   import {push} from "svelte-spa-router";
+  import {getContext} from "svelte";
 
   let email = ""
   let password = "";
+  let errorMessage = "";
+
+  const donationService = getContext("PlacemarkService");
 
   async function login() {
-    push("/discover");
+    let success = await donationService.login(email, password)
+    if (success) {
+      push("/discover");
+    } else {
+      email = "";
+      password = "";
+      errorMessage = "Invalid Credentials";
+    }
   }
 </script>
 
@@ -22,3 +33,8 @@
     <button class="button is-link">Log in</button>
   </div>
 </form>
+{#if errorMessage}
+  <div class="section">
+    {errorMessage}
+  </div>
+{/if}
