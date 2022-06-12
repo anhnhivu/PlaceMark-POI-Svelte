@@ -6,9 +6,12 @@
 - Log in/ Sign up Forms
 
 ## Version 0.2.0
-- Done
 - Call API services from Hapi
 - Save data to localStorage for reloading
+
+## Version 0.3.0
+- Add lists of points
+- Add a simple form to create a point
 
 ## Attribute
 image: Flaticon.com
