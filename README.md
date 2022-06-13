@@ -13,5 +13,8 @@
 - Add lists of points
 - Add a simple form to create a point
 
+## Version 0.4.0
+- Add leaflet map
+
 ## Attribute
 image: Flaticon.com

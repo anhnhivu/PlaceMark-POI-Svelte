@@ -3,6 +3,7 @@
   import Login from "./pages/Login.svelte"
   import Signup from "./pages/Signup.svelte"
   import Discover from "./pages/Discover.svelte";
+  import Addnew from "./pages/Addnew.svelte";
   import Report from "./pages/Report.svelte";
   import Router from "svelte-spa-router";
   import { PlacemarkService } from "./services/placemark-service.js"
@@ -16,8 +17,9 @@
     "/login": Login,
     "/signup": Signup,
     "/main": Main,
-    "/discover": Discover,
+    "/addnew": Addnew,
     "/report": Report,
+    "/discover": Discover,
     "/logout": Main
   }
 </script>

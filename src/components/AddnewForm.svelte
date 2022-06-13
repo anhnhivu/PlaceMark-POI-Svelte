@@ -1,11 +1,16 @@
 <script>
-  import {getContext, onMount} from "svelte";
+  import { createEventDispatcher, getContext, onMount } from "svelte";
+  import Coordinates from "./Coordinates.svelte";
 
   const placemarkService = getContext("PlacemarkService");
+  const dispatch = createEventDispatcher();
 
   let name = "";
   let zipCode = "";
   let city = "";
+
+  let lat = 49.005;
+  let lng = 12.071;
 
   let categoryList = [];
   let selectedCategory = "";
@@ -23,6 +28,8 @@
         name: name,
         zipCode: zipCode,
         category: category._id,
+        lat: lat,
+        lng: lng,
       };
       const success = await placemarkService.addPoint(point);
       if (!success) {
@@ -30,6 +37,9 @@
         return;
       }
       message = `Thanks! You pinned ${name} on the map, as a ${category.name}`;
+      dispatch("message", {
+        point: point,
+      });
     } else {
       message = "Please fill in all the required fields.";
     }
@@ -58,6 +68,7 @@
       </select>
     </div>
   </div>
+  <Coordinates bind:lat={lat} bind:lng={lng}/>
   <div class="field">
     <div class="control">
       <button class="button is-link is-light">Add</button>
