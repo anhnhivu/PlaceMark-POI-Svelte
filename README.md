@@ -16,5 +16,8 @@
 ## Version 0.4.0
 - Add leaflet map
 
+## Version 0.5.0
+- Add frappe chart
+
 ## Attribute
 image: Flaticon.com
