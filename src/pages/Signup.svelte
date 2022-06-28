@@ -3,6 +3,7 @@
   import WelcomeNavigator from "../components/WelcomeNavigator.svelte";
   import TitleBar from "../components/TitleBar.svelte";
   import SignupForm from "../components/SignupForm.svelte";
+  import Footer from "../components/Footer.svelte";
 </script>
 
 <div class="columns is-vcentered">
@@ -25,3 +26,5 @@
     <img alt="flat" src="{flat}" width="300">
   </div>
 </div>
+
+<Footer/>

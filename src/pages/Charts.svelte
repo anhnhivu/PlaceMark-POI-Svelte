@@ -4,6 +4,7 @@
     import Chart from 'svelte-frappe-charts';
     import {getContext, onMount} from "svelte";
     import cityscape from "/src/assets/cityscape.png";
+    import Footer from "../components/Footer.svelte";
   
     const placemarkService = getContext("PlacemarkService");
   
@@ -58,4 +59,6 @@
         <h1 class="title is-4">By Category</h1>
         <Chart data={totalByCategory} type="bar"/>
     </div>
-  </div>
+</div>
+
+<Footer/>
