@@ -5,8 +5,16 @@
     let userList = [];
   
     onMount(async () => {
-        userList = await placemarkService.getAllUsers();
+      userList = await placemarkService.getAllUsers();
     });
+
+    const deleteUser = async(id) => {
+      var result = confirm("Are you sure you want to remove this account?");
+      if (result) {
+        await placemarkService.deleteOneUser(id);
+        userList = await placemarkService.getAllUsers();
+      }
+    } 
   </script>
   
   <table class="table is-fullwidth">
@@ -29,10 +37,14 @@
             {user.lastName}
           </td>
           <td>
-            <!-- svelte-ignore a11y-missing-attribute -->
-            <a class="ui icon button">
+            {#if user.role === "admin"}
+              <div></div>
+            {:else}
+              <button on:click={() => deleteUser(user._id)}>
                 <i class="fas fa-trash"></i>
-            </a>
+              </button>
+            {/if}
+            
           </td>
         </tr>
       {/each}

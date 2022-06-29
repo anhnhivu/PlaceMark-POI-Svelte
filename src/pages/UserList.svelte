@@ -1,6 +1,6 @@
 <script>
-    import students from "/src/assets/students.png";
-    import UserList from "../components/UserList.svelte";
+    import student from "/src/assets/student.jpeg";
+    import UserDetailList from "../components/UserDetailList.svelte";
     import TitleBar from "../components/TitleBar.svelte";
     import Footer from "../components/Footer.svelte";
     import MainNavigator from "../components/MainNavigator.svelte";
@@ -18,10 +18,10 @@
   <div class="columns">
     <div class="column is-two-thirds box has-text-centered">
         <h1 class="title is-4 title-account">Account List</h1>
-        <UserList/>
+        <UserDetailList/>
       </div>
     <div class="column has-text-centered">
-      <img alt="students" src={students} width="400"/>
+      <img alt="students" src={student} width="400"/>
     </div>
 </div>
   

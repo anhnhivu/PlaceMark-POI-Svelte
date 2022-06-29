@@ -98,4 +98,13 @@ export class PlacemarkService {
       return [];
     }
   }
+
+  async deleteOneUser(id) {
+    try {
+      const response = await axios.get(this.baseUrl + "/api/users/deleteuser/" + id );
+      return true;
+    } catch (error) {
+      return false;
+    }
+  }
 }

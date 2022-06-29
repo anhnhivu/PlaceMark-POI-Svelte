@@ -29,7 +29,7 @@
           {point.category.name}
         </td>
         <td>
-          {point.addedBy.firstName} {point.addedBy.lastName}
+          
         </td>
       </tr>
     {/each}
