@@ -2,12 +2,13 @@
   import skyscraper from "/src/assets/skyscraper.png";
   import PlacemarkList from "../components/PlacemarkList.svelte";
   import TitleBar from "../components/TitleBar.svelte";
+  import Footer from "../components/Footer.svelte";
   import MainNavigator from "../components/MainNavigator.svelte";
 </script>
 
 <div class="columns is-vcentered">
   <div class="column is-two-thirds">
-    <TitleBar title={"Placemark Inc."} subTitle={"Recent places"}/>
+    <TitleBar title={"Placemark Inc."} subTitle={"All places"}/>
   </div>
   <div class="column">
     <MainNavigator/>
@@ -19,7 +20,15 @@
     <img alt="skyscraper" src={skyscraper} width="300"/>
   </div>
   <div class="column box has-text-centered">
-    <h1 class="title is-4">Recently added places</h1>
+    <h1 class="title is-4 title-report">All places</h1>
     <PlacemarkList/>
   </div>
 </div>
+
+<Footer/>
+
+<style>
+  .title-report {
+      padding-top: 20px;
+  }
+  </style>

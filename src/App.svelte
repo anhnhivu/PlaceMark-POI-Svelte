@@ -6,10 +6,10 @@
   import Addnew from "./pages/Addnew.svelte";
   import Report from "./pages/Report.svelte";
   import Charts from "./pages/Charts.svelte";
+  import UserList from "./pages/UserList.svelte";
   import Router from "svelte-spa-router";
   import { PlacemarkService } from "./services/placemark-service.js"
   import { setContext } from "svelte";
-
 
   setContext("PlacemarkService", new PlacemarkService("http://localhost:4000"));
 
@@ -22,6 +22,7 @@
     "/report": Report,
     "/discover": Discover,
     "/charts": Charts,
+    "/users": UserList,
     "/logout": Main
   }
 </script>

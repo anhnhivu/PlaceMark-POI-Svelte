@@ -19,5 +19,19 @@
 ## Version 0.5.0
 - Add frappe chart
 
+## Version 1.0.0
+- Pre-release
+
+## Version 1.0.1
+- Add Admin View + Account List
+- Modify Title Bar and Navigator
+- Minor appearances change, add footer
+- TODO: remove one user API
+
+## Version 1.1.0
+- Admin Account: can view user list
+- Admin Accoutn: can remove User
+
+
 ## Attribute
 image: Flaticon.com
