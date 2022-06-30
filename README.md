@@ -19,5 +19,31 @@
 ## Version 0.5.0
 - Add frappe chart
 
+## Version 1.0.0
+- Pre-release
+
+## Version 1.0.1
+- Add Admin View + Account List
+- Modify Title Bar and Navigator
+- Minor appearances change, add footer
+- TODO: remove one user API
+
+## Version 1.1.0
+- Admin Account: can view user list
+- Admin Account: can remove User
+- Redirect after click on marker popup
+- Add detail of marker page
+- Fix Add new marker Page
+
+## Version 1.2.0
+- Map of POI, more layers and groups
+- Add multiple maps on a page
+
+## Version 1.3.0
+- Add Image Gallery
+- Add two charts
+- Make charts selectable by user
+
+
 ## Attribute
-image: Flaticon.com
+image: Flaticon.com, unsplash.com

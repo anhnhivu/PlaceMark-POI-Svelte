@@ -12,6 +12,7 @@ export class PlacemarkService {
       user.set({
         email: savedUser.email,
         token: savedUser.token,
+        isAdmin: savedUser.isAdmin,
       });
       axios.defaults.headers.common["Authorization"] = "Bearer " + savedUser.token;
     }
@@ -21,12 +22,14 @@ export class PlacemarkService {
     try {
       const response = await axios.post(`${this.baseUrl}/api/users/authenticate`, {email, password});
       axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.token;
+      console.log(response);
       if (response.data.success) {
         user.set({
           email: email,
           token: response.data.token,
+          isAdmin: response.data.isAdmin,
         });
-        localStorage.placemark = JSON.stringify({email:email, token:response.data.token});
+        localStorage.placemark = JSON.stringify({email:email, token:response.data.token, isAdmin: response.data.isAdmin});
         return true;
       }
       return false;
@@ -39,6 +42,7 @@ export class PlacemarkService {
     user.set({
       email: "",
       token: "",
+      isAdmin: false,
     });
     axios.defaults.headers.common["Authorization"] = "";
     localStorage.removeItem("placemark");
@@ -86,4 +90,30 @@ export class PlacemarkService {
     }
   }
 
+  async getAllUsers() {
+    try {
+      const response = await axios.get(this.baseUrl + "/api/users");
+      return response.data;
+    } catch (error) {
+      return [];
+    }
+  }
+
+  async getPointById(id) {
+    try {
+      const response = await axios.get(this.baseUrl + "/api/points/" + id);
+      return response.data;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  async deleteOneUser(id) {
+    try {
+      const response = await axios.get(this.baseUrl + "/api/users/deleteuser/" + id);
+      return true;
+    } catch (error) {
+      return false;
+    }
+  }
 }

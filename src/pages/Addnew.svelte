@@ -3,6 +3,7 @@
   import TitleBar from "../components/TitleBar.svelte";
   import MainNavigator from "../components/MainNavigator.svelte";
   import PointsMap from "../components/PointsMap.svelte";
+  import Footer from "../components/Footer.svelte";
 
   let pointsMap = null;
   function newPointAdded(event) {
@@ -28,3 +29,5 @@
       <AddnewForm on:message={newPointAdded}/>
   </div>
 </div>
+
+<Footer/>

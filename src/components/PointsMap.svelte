@@ -1,13 +1,13 @@
 <script>
-    import 'leaflet/dist/leaflet.css';
+    // import 'leaflet/dist/leaflet.css';
     import { LeafletMap } from '../services/leaflet-map';
     import { getContext, onMount } from "svelte";
 
     const placemarkService = getContext("PlacemarkService");
   
     const mapConfig = {
-      location: {lat: 49.00514526265753, lng: 12.070902491875282},
-      zoom: 16,
+      location: {lat: 49.01275517377035, lng: 12.099749210316908},
+      zoom: 14,
       minZoom: 1,
     };
   
@@ -16,7 +16,10 @@
     onMount(async () => {
         map = new LeafletMap("placemark-map", mapConfig);
         map.showZoomControl();
-        map.addLayerGroup("My List");
+        map.addLayerGroup("Dormitory");
+        map.addLayerGroup("Supermarket");
+        map.addLayerGroup("Postal Office");
+        map.addLayerGroup("Hospital");
         map.showLayerControl();
 
         const points = await placemarkService.getPoints();
@@ -26,12 +29,17 @@
     });
 
     export function addnewMarker(point) {
-        map.addMarker({lat: point.lat, lng: point.lng}, `${point.name} - ${point.category.name}`, "My List");
-        map.moveTo(15, {lat: point.lat, lng: point.lng});
+        if (point.description.length > 232) {
+            point.desc = point.description.slice(0,232);
+        }
+        else point.desc = point.description;
+        
+        map.addMarker({lat: point.lat, lng: point.lng}, point, point.category.name);
+        map.moveTo(14, {lat: point.lat, lng: point.lng});
     } 
 
     
 </script>
   
-<div class="box" id="placemark-map" style="height:800px">
+<div class="box" id="placemark-map" style="height:600px">
 </div>

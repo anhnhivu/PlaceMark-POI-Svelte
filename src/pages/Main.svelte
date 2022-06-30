@@ -1,7 +1,8 @@
 <script>
-  import architectureandcity from "/src/assets/architecture-and-city.png";
+  import cover from "/src/assets/cover.jpeg";
   import WelcomeNavigator from "../components/WelcomeNavigator.svelte";
   import TitleBar from "../components/TitleBar.svelte";
+  import Footer from "../components/Footer.svelte";
   import { getContext } from "svelte";
 
   const placemarkService = getContext("PlacemarkService");
@@ -18,11 +19,25 @@
 </div>
 
 <div class="columns is-vcentered content">
-  <div class="column has-text-centered">
-    <img width="300" src="{architectureandcity}" alt="architecture-and-city">
+  <div class="column has-text-centered is-two-thirds">
+    <img src="{cover}" alt="cover-img" class="cover-img">
   </div>
-  <div class="column">
-    <h1 class="title">Discover new places</h1>
-    <p>Find your own place here with us!</p>
+  <div class="column cover-text">
+    <h1 class="title is-1"> Discover the city</h1>
+    <p> For incoming international exchange students</p>
   </div>
 </div>
+
+<Footer/>
+
+<style>
+  .cover-img {
+    padding: 7px;
+    border-radius: 10px;
+  }
+  .cover-text {
+    align-items: stretch;
+    flex-grow: 1;
+    height: 100%;
+  }
+</style>
