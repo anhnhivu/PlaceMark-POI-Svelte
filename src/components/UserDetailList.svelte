@@ -1,5 +1,5 @@
 <script>
-    import {getContext, onMount} from 'svelte'
+    import {getContext, onMount} from 'svelte';
   
     const placemarkService = getContext("PlacemarkService");
     let userList = [];

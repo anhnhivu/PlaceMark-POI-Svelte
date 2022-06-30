@@ -21,14 +21,17 @@
         <UserDetailList/>
       </div>
     <div class="column has-text-centered">
-      <img alt="students" src={student} width="400"/>
+      <img class="student-img" alt="students" src={student} width="400"/>
     </div>
 </div>
   
 <Footer/>
 
 <style>
-.title-account {
+  .title-account {
     padding-top: 20px;
-}
+  }
+  .student-img {
+    border-radius: 5px;
+  }
 </style>
