@@ -1,49 +1,39 @@
 # PlaceMark-POI-Svelte
 
-## Version 0.1.0
-- Basic setup
-- Routing
-- Log in/ Sign up Forms
+## Project Description
+The website shows a map of dormitories, supermarkets, postal offices and hospitals in Regensburg, for incoming students to Regensburg. They can create an account to log in, view or create places in the city. They can see the name, address, description and an image of each place. Students can easily see postal offices and supermarkets near to their dormitory. They can also see which dorm is close to many facilities when choosing a dormitory. The website also features an image gallery and simple analytics. 
 
-## Version 0.2.0
-- Call API services from Hapi
-- Save data to localStorage for reloading
+Admin has an additional view where they can see the list of users and are able to delete them.
 
-## Version 0.3.0
-- Add lists of points
-- Add a simple form to create a point
+The app uses database and API call from this [backend](https://github.com/anhnhivu/PlaceMark-POI-Hapi) repository.
 
-## Version 0.4.0
-- Add leaflet map
+## Testing
 
-## Version 0.5.0
-- Add frappe chart
+You can create an account and log in to see the map, or use the sample user account. 
+```
+email: sam@smith.com
+password: fireonfire
+```
+Unfortunately, admin accounts are limited and can only be created in the backend. 
 
-## Version 1.0.0
-- Pre-release
 
-## Version 1.0.1
-- Add Admin View + Account List
-- Modify Title Bar and Navigator
-- Minor appearances change, add footer
-- TODO: remove one user API
+## Techology
+- Runtime environment: Node.js
+- Framework: <b>Svelte</b>, <b>Leaflet</b>, Frappe
+- Deployment: [Firebase](https://placemark-ae194.web.app/) 
 
-## Version 1.1.0
-- Admin Account: can view user list
-- Admin Account: can remove User
-- Redirect after click on marker popup
-- Add detail of marker page
-- Fix Add new marker Page
+## Usage
 
-## Version 1.2.0
-- Map of POI, more layers and groups
-- Add multiple maps on a page
+In the project folder, run
 
-## Version 1.3.0
-- Add Image Gallery
-- Add two charts
-- Make charts selectable by user
+```
+npm install
+npm run dev
+```
+
+The project should be running on `http://localhost:3000/`.
+
 
 
 ## Attribute
-image: Flaticon.com, unsplash.com
+image: `Flaticon.com, unsplash.com, stwno.de, maps.google.com`
