@@ -30,8 +30,20 @@
 
 ## Version 1.1.0
 - Admin Account: can view user list
-- Admin Accoutn: can remove User
+- Admin Account: can remove User
+- Redirect after click on marker popup
+- Add detail of marker page
+- Fix Add new marker Page
+
+## Version 1.2.0
+- Map of POI, more layers and groups
+- Add multiple maps on a page
+
+## Version 1.3.0
+- Add Image Gallery
+- Add two charts
+- Make charts selectable by user
 
 
 ## Attribute
-image: Flaticon.com
+image: Flaticon.com, unsplash.com

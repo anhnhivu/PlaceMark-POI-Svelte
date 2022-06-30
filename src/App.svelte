@@ -5,8 +5,8 @@
   import Discover from "./pages/Discover.svelte";
   import Addnew from "./pages/Addnew.svelte";
   import Report from "./pages/Report.svelte";
-  import Charts from "./pages/Charts.svelte";
   import UserList from "./pages/UserList.svelte";
+  import PointDetail from "./pages/PointDetail.svelte";
   import Router from "svelte-spa-router";
   import { PlacemarkService } from "./services/placemark-service.js"
   import { setContext } from "svelte";
@@ -21,8 +21,8 @@
     "/addnew": Addnew,
     "/report": Report,
     "/discover": Discover,
-    "/charts": Charts,
     "/users": UserList,
+    "/point/:id": PointDetail,
     "/logout": Main
   }
 </script>

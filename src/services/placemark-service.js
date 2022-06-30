@@ -99,9 +99,18 @@ export class PlacemarkService {
     }
   }
 
+  async getPointById(id) {
+    try {
+      const response = await axios.get(this.baseUrl + "/api/points/" + id);
+      return response.data;
+    } catch (error) {
+      return null;
+    }
+  }
+
   async deleteOneUser(id) {
     try {
-      const response = await axios.get(this.baseUrl + "/api/users/deleteuser/" + id );
+      const response = await axios.get(this.baseUrl + "/api/users/deleteuser/" + id);
       return true;
     } catch (error) {
       return false;

@@ -11,12 +11,17 @@
   const placemarkService = getContext("PlacemarkService");
 
   async function signup() {
-    let success = await placemarkService.signup(firstName, lastName, email, password);
-    if (success) {
-      push("/");
+    if (firstName && lastName && email && password) {
+      let success = await placemarkService.signup(firstName, lastName, email, password);
+      if (success) {
+        push("/");
+      } else {
+        errorMessage = "Error Trying to sign up";
+      }
     } else {
-      errorMessage = "Error Trying to sign up";
+      errorMessage = "Please fill in all the required fields.";
     }
+    
   }
 </script>
 
